@@ -1,0 +1,19 @@
+//Using only recursion
+public class CountOfInversions {
+   public  static int cnt=0;
+    public static int cnn(int [] arr,int i,int n){
+        if(i<n-1){
+            for(int j=i+1;j<n;j++){
+                if(arr[i]>arr[j])
+                    cnt++;
+            }
+            cnn(arr,++i,n);
+        }
+        return cnt;
+    }
+    public static void main(String[] args) {
+        int [] arr = {1,2,3,4,5};
+        int n=arr.length;
+        System.out.println(cnn(arr,0,n));
+    }
+}
